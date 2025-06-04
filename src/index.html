@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Task Orchestrator - Webpack Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 to-slate-700 min-h-screen flex flex-col items-center justify-start py-8 px-4 text-gray-200">
+
+    <div class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-8 w-full max-w-lg">
+        <header class="mb-6 md:mb-8 text-center">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+                <i class="fas fa-meteor mr-3 text-3xl"></i>
+                Cosmic Task Orchestrator
+            </h1>
+            <p class="text-slate-400 mt-2">Conquering your universe, one task at a time.</p>
+        </header>
+
+        <section class="mb-6">
+            <form id="addTaskForm" class="flex flex-col sm:flex-row gap-3">
+                <input type="text" id="taskTitle" placeholder="Launch new task..." class="flex-grow p-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-colors text-gray-100 placeholder-slate-400" required>
+                <button type="submit" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                    <i class="fas fa-plus-circle mr-2"></i> Add Task
+                </button>
+            </form>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-slate-300 flex items-center">
+                <i class="fas fa-rocket mr-2 text-purple-400"></i> Active Missions
+            </h2>
+            <div id="activeTaskListContainer" class="max-h-60 overflow-y-auto pr-2 space-y-3">
+                <p id="noActiveTasksMessage" class="text-slate-500 text-center py-4 hidden">All systems clear! No active missions.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold mb-4 text-slate-300 flex items-center">
+                <i class="fas fa-flag-checkered mr-2 text-green-400"></i> Accomplished Feats
+            </h2>
+            <div id="completedTaskListContainer" class="max-h-60 overflow-y-auto pr-2 space-y-3">
+                <p id="noCompletedTasksMessage" class="text-slate-500 text-center py-4 hidden">No feats accomplished yet. Get to work!</p>
+            </div>
+        </section>
+
+        <div id="loadingIndicator" class="text-center py-4 hidden">
+            <i class="fas fa-spinner fa-spin text-2xl text-purple-400"></i>
+            <p class="text-slate-400 mt-2">Syncing with the cosmos...</p>
+        </div>
+
+        <div id="messageArea" class="mt-6 text-center text-sm"></div>
+    </div>
+
+    <footer class="mt-8 text-center text-slate-500 text-sm">
+        <p>&copy; <span id="currentYear"></span> CreateFuture <i class="fas fa-star-shooting text-pink-500"></i> - Webpack Edition</p>
+    </footer>
+
+</body>
+</html>

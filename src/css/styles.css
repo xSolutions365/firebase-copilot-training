@@ -1,0 +1,46 @@
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1e293b; /* slate-800 */
+}
+::-webkit-scrollbar-thumb {
+    background: #475569; /* slate-600 */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b; /* slate-500 */
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Animation for task items */
+.task-item-enter {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.task-item-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.task-item-exit {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in, background-color 0.3s ease-in;
+}
+.task-item-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+/* Custom focus ring */
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ec4899; /* Tailwind pink-500 */
+    border-color: #ec4899;
+}
+.completed-task span {
+    text-decoration: line-through;
+    color: #94a3b8; /* slate-400 */
+}
